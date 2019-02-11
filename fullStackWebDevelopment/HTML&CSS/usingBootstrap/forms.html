@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+  <head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Testing Bootstrap </title>   
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> 
+    <!-- our own styles will go in style.css -->  
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap styles and scripts included below -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>      
+  </head>
+
+  <body>
+    <div class="container" style="width:400px;">
+      <h1>Contact Form</h1>
+      <form>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="text" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" rows="3">message goes here...</textarea>
+        </div>
+        <div class="form-group">
+          <input class="btn btn-success btn-block" type="submit" value="Submit">
+        </div>
+        <div class="form-group">
+          <input class="btn btn-info" type="button" value="Help">
+          <input class="btn btn-danger" type="button" value="Go back">
+        </div>
+      </form>
+    </div>
+  </body>
+
+</html>
