@@ -8,7 +8,9 @@ $(document).ready(function() {
         dataType: 'jsonp',
         jsonpCallback: 'func',
         success: function(data) {
-          console.log(data);
+          for (var i =0; i < data.people.length; i++) {
+            $('#people').append('<li>' + data.people[i].name + '</li>');
+          }
         },
         error: function() {
           console.log('error');
