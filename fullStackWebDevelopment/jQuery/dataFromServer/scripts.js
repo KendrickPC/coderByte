@@ -1,6 +1,7 @@
 // coderbyte.com/api/test/data/json
 
 $(document).ready(function() {
+  
   $('#click').on('click', function() {
 
     $.ajax({
