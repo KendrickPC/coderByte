@@ -14,21 +14,36 @@
     
   // create a React component 
   var Counter = React.createClass ({
+    // "this.props" object comes fromt he component in ReacDOM.render function.
+    getInitialState: function() {
+      return {
+        count: 0,
+        threshold: this.props.threshold
+      };
+    },
     // This function will update the counter.
-    updateCounter: function() { },
+    updateCounter: function() {
+      this.setState({ count: this.state.count + 1});
+      if (this.state.count === this.state.threshold) {
+        alert('You passed the threshold!');
+        this.setState({ threshold: this.state.threshold + 5});
+      }
+    },
     // Reset the counter variable.
-    resetCounter: function() { },
+    resetCounter: function() {
+      this.setState(this.getInitialState());
+    },
     // Render function returns elements inserted into the DOM with corresponding data.
     render: function() {
       return (
         <div>
           <button onClick={this.updateCounter}> Click button! </button>
-          <p>Number of clicks: </p>
-          <p> The threshold set to #: </p>
+          <p>Number of clicks: {this.state.count} </p>
+          <p> The threshold set to #: {this.state.threshold} </p>
           <button onClick={this.resetCounter}> Reset Counter </button>
         </div>
         );
-    }   
+      }   
 
   });
         
@@ -38,7 +53,7 @@
   // second parameter is the DOM element we're inserting it into
 
   ReactDOM.render(
-    <Counter />,
+    <Counter threshold={5} />,
     document.getElementById('main')
     );
 
