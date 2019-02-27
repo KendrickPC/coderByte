@@ -16,7 +16,12 @@
 
     var TodoContainer = React.createClass({
       getInitialState: function() {
-        return {items: this.props.items};
+        var counter = (this.props.items) ? this.props.items.length + 1 : 1;
+        return {items: this.props.items || [], counter: counter};
+      },
+      addItem: function(item) {
+        var a = this.state.items.concat([{id: this.state.counter, text: item}]);
+        this.setState({items: a, counter: this.state.counter + 1});
       },
       removeItem: function(idx) {
         var a = this.state.items.filter((v, i) => {if (i !== idx) return v; });
@@ -30,7 +35,7 @@
           <div id="TodoContainer">
             <h1>React Todo</h1>
             <ul>{list}</ul>
-            <TodoInput />
+            <TodoInput addItem={this.addItem} />
           </div>
         );
       }
@@ -53,11 +58,18 @@
     });
 
     var TodoInput = React.createClass({
+      handleSubmit: function() {
+        var inp = this.refs.inputText;
+        if (inp.value.trim() !== '') {
+          this.props.addItem(inp.value.trim().substr(0, 50));
+          inp.value = '';
+        }
+      },
       render: function() {
         return (
           <div className="TodoInput">
-            <input type="text" placeholder="to do..." />
-            <input type="submit" value="add" />
+            <input type="text" placeholder="to do..." ref="inputText" />
+            <input type="submit" value="add" onClick={this.handleSubmit}/>
           </div>
         );
       }
