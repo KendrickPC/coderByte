@@ -24,8 +24,9 @@
       },
       render: function() {
         var list = this.state.items.map((item, idx) =>
-          <TodoItem key={item.id} item={item.text} removeItem={this.removeItem.bind(null, idx)} />);
-        return (
+          <TodoItem key={item.id} item={item.text} removeItem={this.removeItem.bind(null, idx)}
+          />);
+          return (
           <div id="TodoContainer">
             <h1>React Todo</h1>
             <ul>{list}</ul>
@@ -36,12 +37,16 @@
     });
 
     var TodoItem = React.createClass({
+      checkItem: function(e) {
+        var text = e.target.parentNode.getElementsByTagName('span')[0];
+        text.classList.contains('line') ? text.classList.remove('line') : text.classList.add('line')
+      },
       render: function() {
         return (
           <li className="TodoItem">
             <span>{this.props.item}</span>
             <span className="removeItemClass" onClick={this.props.removeItem}>remove</span>
-            <span className="finishItemClass">finished</span>
+            <span className="finishItemClass" onClick={this.checkItem}>finished</span>
           </li>
         );
       }
