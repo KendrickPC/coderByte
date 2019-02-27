@@ -14,13 +14,21 @@
 
   <script type="text/babel">
 
+    
+    
+
     var TodoContainer = React.createClass({
+      getInitialState: function() {
+      return {items: this.props.items};
+      },  
       render: function() {
+        var list = this.state.items.map((item, idx) =>
+          <TodoItem key={item.id} item={item.text} />);
         return (
           <div id="TodoContainer">
             <h1>React Todo</h1>
             <ul>
-            <TodoItem />
+              {list}
             </ul>
             <TodoInput />
           </div>
@@ -32,7 +40,7 @@
       render: function() {
         return (
           <li className="TodoItem">
-            <span>I am an item</span>
+            <span>{this.props.item}</span>
             <span className="removeItem">remove</span>
             <span className="finishItem">finished</span>
           </li>
@@ -51,7 +59,11 @@
       }
     });
 
-    ReactDOM.render(<TodoContainer />, document.getElementById('container'));
+    ReactDOM.render(<TodoContainer items={[
+      {id: 1, text: 'make food'},
+      {id: 2, text: 'go running'},
+      {id: 3, text: 'study for interviews'}]} />,
+      document.getElementById('container'));
 
   </script>
 
