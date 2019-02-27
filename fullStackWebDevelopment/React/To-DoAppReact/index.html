@@ -14,22 +14,21 @@
 
   <script type="text/babel">
 
-    
-    
-
     var TodoContainer = React.createClass({
       getInitialState: function() {
-      return {items: this.props.items};
-      },  
+        return {items: this.props.items};
+      },
+      removeItem: function(idx) {
+        var a = this.state.items.filter((v, i) => {if (i !== idx) return v; });
+        this.setState({items: a});
+      },
       render: function() {
         var list = this.state.items.map((item, idx) =>
-          <TodoItem key={item.id} item={item.text} />);
+          <TodoItem key={item.id} item={item.text} removeItem={this.removeItem.bind(null, idx)} />);
         return (
           <div id="TodoContainer">
             <h1>React Todo</h1>
-            <ul>
-              {list}
-            </ul>
+            <ul>{list}</ul>
             <TodoInput />
           </div>
         );
@@ -41,8 +40,8 @@
         return (
           <li className="TodoItem">
             <span>{this.props.item}</span>
-            <span className="removeItem">remove</span>
-            <span className="finishItem">finished</span>
+            <span className="removeItemClass" onClick={this.props.removeItem}>remove</span>
+            <span className="finishItemClass">finished</span>
           </li>
         );
       }

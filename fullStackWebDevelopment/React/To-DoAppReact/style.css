@@ -39,11 +39,11 @@
   background: #f2ecda;
 }
 
-#TodoContainer .TodoItem span.removeItem {
+#TodoContainer .TodoItem span.removeItemClass {
   background: #f0cac7;
 }
 
-#TodoContainer .TodoItem span.finishItem {
+#TodoContainer .TodoItem span.finishItemClass {
   background: #b4f5a2;
   margin-right: 5px;
 }
