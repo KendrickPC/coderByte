@@ -83,7 +83,13 @@ obj.foo([1, 2, 3]);
 console.log(obj.arr); // => [1, 4, 9]
 
 
+// Resources
 
+// Developer Mozilla
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
+// Exploring ES6 book
+// http://exploringjs.com/es6/ch_arrow-functions.html
 
-
+// ES6 In Depth: Arrow functions
+// https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/

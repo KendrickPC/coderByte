@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="utf-8" />
+  <title> Testing React </title>    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>        
+</head>
+<body>
+  <div id="main"></div>
+  
+  <script type="text/babel">
+    
+  // create a React component 
+  var Counter = React.createClass ({
+    // This function will update the counter.
+    updateCounter: function() { },
+    // Reset the counter variable.
+    resetCounter: function() { },
+    // Render function returns elements inserted into the DOM with corresponding data.
+    render: function() {
+      return (
+        <div>
+          <button onClick={this.updateCounter}> Click button! </button>
+          <p>Number of clicks: </p>
+          <p> The threshold set to #: </p>
+          <button onClick={this.resetCounter}> Reset Counter </button>
+        </div>
+        );
+    }   
+
+  });
+        
+
+  // render a React component in the DOM
+  // first parameter is the component
+  // second parameter is the DOM element we're inserting it into
+
+  ReactDOM.render(
+    <Counter />,
+    document.getElementById('main')
+    );
+
+
+  </script>
+
+</body>  
+</html>
