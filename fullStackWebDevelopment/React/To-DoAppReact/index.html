@@ -19,7 +19,33 @@
         return (
           <div id="TodoContainer">
             <h1>React Todo</h1>
-            <li>hello world</li>
+            <ul>
+            <TodoItem />
+            </ul>
+            <TodoInput />
+          </div>
+        );
+      }
+    });
+
+    var TodoItem = React.createClass({
+      render: function() {
+        return (
+          <li className="TodoItem">
+            <span>I am an item</span>
+            <span className="removeItem">remove</span>
+            <span className="finishItem">finished</span>
+          </li>
+        );
+      }
+    });
+
+    var TodoInput = React.createClass({
+      render: function() {
+        return (
+          <div className="TodoInput">
+            <input type="text" placeholder="to do..." />
+            <input type="submit" value="add" />
           </div>
         );
       }
