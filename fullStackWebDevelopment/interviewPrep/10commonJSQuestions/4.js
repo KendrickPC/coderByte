@@ -5,7 +5,7 @@
 // to pass a specific object to a function that uses a this reference.
 
 function lastFirst() {
-	return this.last + ', ' + this.first;
+  return this.last + ', ' + this.first;
 };
 
 var arbitraryName = {first: "Jane", last: "Doe"};

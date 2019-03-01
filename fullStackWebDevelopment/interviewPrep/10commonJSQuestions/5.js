@@ -10,7 +10,6 @@ function useStrictTesting(value) {
   x = value + 10;
   return x;
 }
-
 console.log(useStrictTesting(2)); // Uncaught ReferenceError: x is not defined
 // x is not defined because it is a global scope variable.
 
