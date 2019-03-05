@@ -9,6 +9,7 @@
 
 // Our two sum function which will return
 // all pairs in the array that sum up to S
+
 function twoSum(arr, S) {
 
   var sums = [];
@@ -84,11 +85,3 @@ function twoSum(arr, S) {
 }
 
 twoSum([3, 5, 2, -4, 8, 11], 7);
-
-
-
-
-
-
-
-
