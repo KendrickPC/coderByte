@@ -32,9 +32,9 @@ Assume the input string is "10??"
 	3rd character = ?
 	First we make a copy of each string set and then we add a 0 to half of
 	the sets and 1 to the other half.
-	set = [[1, 0, #####0], [1, 0, #####1]]
+	set = [[1, 0, ##### 0], [1, 0, ##### 1]]
 
 	4th characer = ?
 	Same procedure as the previous step.
-	set = [[1, 0, 0, #####0], [1, 0, 1, #####0]
+	set = [[1, 0, 0, ##### 0], [1, 0, 1, ##### 0]
 
