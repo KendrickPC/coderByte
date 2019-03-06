@@ -1,4 +1,4 @@
-# Implement a queue using a linked list
+# Implement a Queue Using a Linked List
 
 A queue is an abstract data structure where items can either be added to a
 collection or removed from a collection, enqueuing and dequeuing, respectively.
@@ -21,4 +21,18 @@ the method always returns the first element from the queue. Here is an example
 of a few operations we want our queue to be able to perform.
 
 ![Queue](queue.png)
+
+### Algorithm
+
+We will store a reference to the front and back of the queue in order to make
+enqueuing and dequeuing run in O(1) constant time. Every time we want to insert
+into the queue, we add the new element to the end of the linked list and update
+the back pointer. When we want to dequeue we return the first node in the
+linked list and update the front pointer.
+
+### Running Time
+
+Because we keep a reference to the front and back pointers of the linked list,
+inserting a new node and removing the first node are both done in O(1),
+constant time. These operations do not depend on the size of the queue at all.
 
