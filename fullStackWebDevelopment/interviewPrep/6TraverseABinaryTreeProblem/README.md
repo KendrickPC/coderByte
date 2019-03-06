@@ -16,3 +16,49 @@ which sets up nodes and links them to their proper child nodes:
 
 ![Node](node.png)
 
+##### Pre-order
+
+A pre-order traversal on a tree performs the following steps starting from
+the root:
+
+	1) Return the root node value.
+	2) Traverse the left subtree by recursively calling the pre-order function.
+	3) Traverse the right subtree by recursively calling the pre-order function.
+
+For the tree above, performing a pre-order traversal would output the node
+values in the following order:
+
+	A, B, D, E, C
+
+For the actual code implementation, we will be maintaining an array
+for the order of the nodes:
+
+![Pre-order](pre-order.png)
+
+##### In-order
+
+An in-order traversal on a tree performs the following steps starting
+from the root:
+
+	1) Traverse the left subtree by recursively calling the in-order
+	function.
+	2) Return the root node value.
+	3) Traverse the right subtree by recursively calling the
+	in-order function.
+
+For the tree above, performing an in-order traversal would output
+the node values in the following order:
+
+	D, B, E, A, C
+
+![In-order](in-order.png)
+
+
+
+
+
+
+
+
+
+
