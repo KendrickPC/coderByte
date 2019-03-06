@@ -18,4 +18,17 @@ stack smaller you start removing books from the top of the stack.
 
 ![Stack Operations](stack_operations.png)
 
+### Algorithm for queue using two stacks
 
+For example: Suppose we push "a", "b, "c" to a stack. If we are trying to
+implement a queue and we call the dequeue method 3 times, we actually want the
+elements to come out in the order: "a", "b, "c", which is in the opposite order
+they would come out if we popped from the stack. So, basically, we need to access
+the elements in the reverse order that they exist in the stack. The following
+algorithm (located in TwoStackQueue.js) will implement a queue using two stacks.
+
+### Running time
+
+The worst case running time for implementing these operations using stacks is
+O(n) because you need to transfer n elements from stack 1 to stack 2 when a
+dequeue method is called. Pushing to stack 1 is simply O(1).
