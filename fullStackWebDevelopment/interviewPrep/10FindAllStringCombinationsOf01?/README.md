@@ -32,9 +32,16 @@ Assume the input string is "10??"
 	3rd character = ?
 	First we make a copy of each string set and then we add a 0 to half of
 	the sets and 1 to the other half.
-	set = [[1, 0, ##### 0], [1, 0, ##### 1]]
+	set = [[1, 0, 0], [1, 0, 1]]
 
 	4th characer = ?
 	Same procedure as the previous step.
-	set = [[1, 0, 0, ##### 0], [1, 0, 1, ##### 0]
+	set = [[1, 0, 0, 0], [1, 0, 1, 0], [1, 0, 0, 1], [1, 0, 1, 1]]
 
+### Run Time
+
+This algorithm runs in O(2n) time where n is equal to the number of wildcards
+because there are 2n possible sets for all wildcards in the string. The
+algorithm must perform this many steps to calculate all the sets. 
+[1] If there are no wildcards in the string, then the algorithm runs in linear
+time, O(n), because it will simply append each character to a string.
