@@ -16,7 +16,7 @@ which sets up nodes and links them to their proper child nodes:
 
 ![Node](node.png)
 
-##### Pre-order
+### Pre-order
 
 A pre-order traversal on a tree performs the following steps starting from
 the root:
@@ -35,7 +35,7 @@ for the order of the nodes:
 
 ![Pre-order](pre-order.png)
 
-##### In-order
+### In-order
 
 An in-order traversal on a tree performs the following steps starting
 from the root:
