@@ -36,5 +36,3 @@ Enqueue('a');
 Enqueue('b');
 Enqueue('c');
 Dequeue(); // "a"
-
-
