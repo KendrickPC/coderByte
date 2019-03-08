@@ -74,18 +74,6 @@ solutions for N - 1 steps plus N - 2 steps. Let's confirm this.
 	Solution = (3) + (2)
 	Solution = 5
 
-It checks out so far! The solution to this problem requires recursion, which means to solve for a particular N, we need the solutions for previous N's. Our code solution below will attempt to mimic this process of recursion to solve for any N.
-
-### Run Time
-O(N)
-
-
-
-
-
-
-
-
-
-
-
+It checks out so far! The solution to this problem requires recursion, which means
+to solve for a particular N, we need the solutions for previous N's. Our code
+solution below will attempt to mimic this process of recursion to solve for any N.
