@@ -53,3 +53,39 @@ What about 3 steps?
 
 ![Step Walking Using Recusion](recusionStepWalking.png)
 
+N = 3 
+Solution = 3
+
+N = 4
+Solution = 5
+
+We can see a pattern beginning to emerge. The solution for N steps is equal to the
+solutions for N - 1 steps plus N - 2 steps. Let's confirm this.
+
+	N = 3
+	Solution = (N - 1 steps) + (N - 2 steps)
+	Solution = (N = 2) + (N = 1)
+	Solution = (2) + (1)
+	Solution = 3
+
+	N = 4
+	Solution = (N - 1 steps) + (N - 2 steps)
+	Solution = (N = 3) + (N = 2)
+	Solution = (3) + (2)
+	Solution = 5
+
+It checks out so far! The solution to this problem requires recursion, which means to solve for a particular N, we need the solutions for previous N's. Our code solution below will attempt to mimic this process of recursion to solve for any N.
+
+### Run Time
+O(N)
+
+
+
+
+
+
+
+
+
+
+
