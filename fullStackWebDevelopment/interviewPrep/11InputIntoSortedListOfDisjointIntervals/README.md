@@ -29,4 +29,42 @@ the new list: [[1,5], [10,27]].
 	This interval comes before [12, 27] so just add it to the final.
 
 	final = [[1, 5]]
-	
+
+	2nd interval = [10,15] 
+	This interval overlaps with our interval, [12,27], because 12 is
+	between 10 and 15. So add the new interval to final.
+
+	final = [[1,5], [12,27]]
+
+	Now we check each remaining interval in the array and determine if
+	we can merge somehow.
+
+	2nd interval = [10,15] 
+	This interval overlaps with the last element in final, so merge by
+	taking the minimum start interval and maximum end interval. 
+	Minimum of (10, 12) and maximum of (15, 27) gives us: [10,27].
+	Now replace the last interval in final with this merged interval.
+
+	final = [[1, 5], [10, 27]]
+
+	3rd interval = [20,25] 
+	This interval overlaps with the last element in final, so merge by
+	taking the minimum start interval and maximum end interval. 
+	Minimum of (10, 20) and maximum of (27, 25) gives us: [10,27]. 
+	Now replace the last interval in final with this merged interval.
+
+	final = [[1,5], [10,27]]
+
+	No more intervals in the original array, so: final = [[1,5], [10,27]].
+
+### Run Time
+
+This algorithm runs in O(n) time because, in the worst case, we need to
+insert the new interval to the beginning of the array and then compare
+and merge every single other interval in the array, but this would still
+require only one pass through the array.
+
+
+
+
+
