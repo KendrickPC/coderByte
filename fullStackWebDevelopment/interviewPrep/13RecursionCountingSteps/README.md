@@ -15,8 +15,9 @@ In a previous post we covered some questions regarding closures.
 
 ### Sources
 
-[Quora](https://www.quora.com/How-did-you-prepare-for-Hack-Reactors-admissions-challenge)
-[Glassdoor](https://www.glassdoor.com/Interview/You-are-climbing-a-stair-case-Each-time-you-can-either-make-1-step-or-2-steps-The-staircase-has-n-steps-In-how-many-dist-QTN_133071.htm)
+ * [Quora](https://www.quora.com/How-did-you-prepare-for-Hack-Reactors-admissions-challenge)
+
+ * [Glassdoor](https://www.glassdoor.com/Interview/You-are-climbing-a-stair-case-Each-time-you-can-either-make-1-step-or-2-steps-The-staircase-has-n-steps-In-how-many-dist-QTN_133071.htm)
 
 ### Question
 
