@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+app.set('view engine', 'ejs');
 
 // you can make a request to a database here and retrieve some data
 // but for this example, we are using a static object of user information
