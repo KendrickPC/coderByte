@@ -33,11 +33,15 @@ app.get('/', function (req, res) {
 
 app.get('/user', function (req, res) {
   var check = Users[req.query.name];
-  var info = (check) ? check : 'User does not exist...';
-  res.send(info);
+  if (check) {
+    res.render('user', { name: req.query.name, info: check });
+  } else {
+    res.send('User does not exist...');
+  }
 });
 
 // what port to run server on
 app.listen(3001, function () {
   console.log('server started on port 3001');
 });
+
