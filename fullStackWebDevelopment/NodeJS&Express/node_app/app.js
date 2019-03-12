@@ -46,6 +46,28 @@ app.get('/user/:name', function (req, res) {
   }
 });
 
+app.get('/user/:name/:topic/:show', function (req, res) {
+  var check = Users[req.params.name];
+  if (check) {
+    var list;
+    var books = ['book1', 'book2', 'book3', 'book4', 'bookA', 'bookB', 'bookC'];
+    var movies = ['movie1', 'movie2', 'movie3', 'movie4', 'movie5', 'movie6'];
+    if (req.params.topic === 'books') { 
+      list = books.slice(0);
+    }
+    if (req.params.topic === 'movies') { 
+      list = movies.slice(0);
+    }
+    res.render('user', { 
+      name: req.params.name, 
+      info: check, 
+      list: list.slice(0, parseInt(req.params.show)) 
+    });
+  } else {
+    res.send('User does not exist...');
+  }
+});
+
 // what port to run server on
 app.listen(3001, function () {
   console.log('server started on port 3001');

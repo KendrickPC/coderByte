@@ -11,5 +11,14 @@
     <li> <b>Occupation:</b> <%= info.occupation %> </li>
     <li> <b>Hobby is:</b> <%= info.hobby %> </li>
   </ul>
+    <!-- check if variable exists -->
+  <% if (locals.list) { %>
+    <h2>Favorites</h2>
+      <ul>
+        <% for (var i = 0; i < list.length; i++) { %>
+        <li> <%= list[i] %> </li>
+        <% } %>
+      </ul>
+   <% } %>
 </body>
 </html>
