@@ -28,7 +28,9 @@ var Users = {
 
 // route pages
 app.get('/', function (req, res) {
-  res.send('Main page is up and running!');
+  var usersArray = [];
+  for (var i in Users) { usersArray.push(i); }
+  res.render('index', { users: usersArray });
 });
 
 app.get('/user', function (req, res) {
