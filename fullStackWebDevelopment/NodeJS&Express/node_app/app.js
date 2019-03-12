@@ -36,10 +36,11 @@ app.get('/', function (req, res) {
   res.render('index', { users: usersArray });
 });
 
-app.get('/user', function (req, res) {
-  var check = Users[req.query.name];
+// req.params.name
+app.get('/user/:name', function (req, res) {
+  var check = Users[req.params.name];
   if (check) {
-    res.render('user', { name: req.query.name, info: check });
+    res.render('user', { name: req.params.name, info: check });
   } else {
     res.send('User does not exist...');
   }
