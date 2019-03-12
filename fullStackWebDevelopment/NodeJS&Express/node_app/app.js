@@ -24,7 +24,7 @@ var Users = {
   'Jane': {
     age: 28,
     occupation: 'Nurse',
-    hobby: 'Chess'
+    hobby: 'Chess' 
   }
 
 };
