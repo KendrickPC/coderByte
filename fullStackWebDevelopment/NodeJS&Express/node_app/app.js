@@ -2,6 +2,9 @@ var express = require('express');
 var app = express();
 app.set('view engine', 'ejs');
 
+// Using static/data.txt file for http://localhost:3001/data.txt
+app.use(express.static('static'));
+
 // you can make a request to a database here and retrieve some data
 // but for this example, we are using a static object of user information
 var Users = {
