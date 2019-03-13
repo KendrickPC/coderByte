@@ -1,4 +1,5 @@
 var express = require('express');
+var helper = require('./js/helper.js');
 var app = express();
 app.set('view engine', 'ejs');
 
@@ -40,7 +41,8 @@ app.get('/', function (req, res) {
 app.get('/user/:name', function (req, res) {
   var check = Users[req.params.name];
   if (check) {
-    res.render('user', { name: req.params.name, info: check });
+    res.send(helper.sentence(req.params.name, check.age, check.occupation));
+    // res.render('user', { name: req.params.name, info: check });
   } else {
     res.send('User does not exist...');
   }
