@@ -17,5 +17,26 @@ other helpful libraries that aid in building web applications with Node.js.
 	Terminal into root folder, then enter the following:
 	nodemon app.js
 
-### Modules and NPM:
+# Mongo DB and Mongoose
+
+### Resources
+
+![Official MongoDB Quick Start Guide](http://mongodb.github.io/node-mongodb-native/2.1/quick-start/)
+![Collection API: e.g. find(), insertOne(), etc.](http://mongodb.github.io/node-mongodb-native/2.1/api/Collection.html)
+![Connecting and Working with MongoDB with Node & Express](https://www.terlici.com/2015/04/03/mongodb-node-express.html)
+![Node.js body parser module](https://github.com/expressjs/body-parser)
+
+### Install
+
+	brew install mongodb
+	
+	TODO: Upgrade XCODE
+	TODO: brew install mongodb
+
+### Mongo DB Start
+
+	Go to the root folder of your computer and fire up Mongodb with the terminal command ```mongod```
+
+	```npm install mongodb``` in the project folder. Then ```nodemon app.js``` and fire up the application.
+
 	

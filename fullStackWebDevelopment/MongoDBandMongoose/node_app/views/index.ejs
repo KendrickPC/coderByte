@@ -5,12 +5,14 @@
   <title>User page</title>
 </head>
 <body>
-  <h1>Users</h1>
-  <ul>
-    <% for (var i = 0; i < users.length; i++) { %>
-    <li> <a href="/user/<%= users[i] %>"><%= users[i] %></a> </li>
-    <% } %>
-  </ul>
+  <form action="/" method="post">
+    
+    <input type="text" id="name" name="name" placeholder="Name" required>
+    <input type="text" id="age" name="age" placeholder="Age" required>
+    <input type="text" id="occup" name="occup" placeholder="Occupation" required>
+    <input type="submit" value="Submit"> 
+
+  </form>
 </body>
 </html>
 
