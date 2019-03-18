@@ -28,6 +28,14 @@ app.post('/', function (req, res) {
   });
 });
 
+app.get('/list', function(req, res) {
+  var collection = db.collection('users');
+  collection.find({}).toArray(function(err, result) {
+    console.log(result);
+    res.render('index');
+  });
+});
+
 // req.params.name
 app.get('/user/:name', function (req, res) {
   var user = req.params.name;
