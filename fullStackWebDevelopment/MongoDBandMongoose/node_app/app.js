@@ -30,12 +30,16 @@ app.post('/', function (req, res) {
 
 // req.params.name
 app.get('/user/:name', function (req, res) {
-  var check = Users[req.params.name];
-  if (check) {
-    res.render('user', { name: req.params.name, info: check });
-  } else {
-    res.send('User does not exist...');
-  }
+  var user = req.params.name;
+  var collection = db.collection('users');
+  collection.find({'name': user}).toArray(function(err, result) {
+    if (result.length > 0) {
+      var found = result[0];
+      res.render('user', { name: found.name, info: found });
+    } else {
+      res.send('User does not exist...');
+    }
+  });
 });
 
 MongoClient.connect(url, function(err, database) {
