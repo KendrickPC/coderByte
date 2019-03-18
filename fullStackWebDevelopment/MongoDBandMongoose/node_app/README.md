@@ -39,4 +39,16 @@ other helpful libraries that aid in building web applications with Node.js.
 
 	```npm install mongodb``` in the project folder. Then ```nodemon app.js``` and fire up the application.
 
-	
+	```npm install body-parser```
+
+##### Changed package.json file to the following:
+
+	  "mongod": {
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/mongod/-/mongod-2.0.0.tgz",
+      "integrity": "sha1-zuxLcjBRkOhdb4+smS8VpH6xjHQ=",
+      "requires": {
+        "promise-queue": "^2.2.3"
+      }
+    },
+

@@ -1,18 +1,31 @@
 var express = require('express');
-var app = express();
+var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 var url = 'mongodb://localhost:27017/testing';
+
 var db;
 
+var app = express();
 app.set('view engine', 'ejs');
-
-// Using static/data.txt file for http://localhost:3001/data.txt
 app.use(express.static('static'));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
-// route pages
 app.get('/', function (req, res) {
-  res.render('index')
+  res.render('index');
+});
+
+app.post('/', function (req, res) {
+  var user = req.body;
+  console.log(user);
+  var collection = db.collection('users');
+  collection.insertOne(user, function(err, result) {
+    console.log('User has been inserted.');
+    res.render('index');
+  });
 });
 
 // req.params.name
@@ -24,8 +37,6 @@ app.get('/user/:name', function (req, res) {
     res.send('User does not exist...');
   }
 });
-
-
 
 MongoClient.connect(url, function(err, database) {
   console.log('Connected to Mongo.');
