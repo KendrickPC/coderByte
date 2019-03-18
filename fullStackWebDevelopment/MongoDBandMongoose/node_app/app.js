@@ -32,7 +32,7 @@ app.get('/list', function(req, res) {
   var collection = db.collection('users');
   collection.find({}).toArray(function(err, result) {
     console.log(result);
-    res.render('index');
+    res.render('list', {users: result});
   });
 });
 
