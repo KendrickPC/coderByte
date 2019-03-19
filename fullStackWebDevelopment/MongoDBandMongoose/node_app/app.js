@@ -2,10 +2,11 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/testing-mongoose');
 
+mongoose.connect('mongodb://localhost:27017/testing-mongoose');
 var db = mongoose.connection;
 
+// For Express.
 var app = express();
 app.set('view engine', 'ejs');
 app.use(express.static('static'));
@@ -45,9 +46,7 @@ app.post('/', function (req, res) {
 });
 
 app.get('/list', function(req, res) {
-  var collection = db.collection('users');
-  collection.find({}).toArray(function(err, result) {
-    console.log(result);
+  User.find({}, function(err, result){
     res.render('list', {users: result});
   });
 });
