@@ -53,12 +53,9 @@ app.get('/list', function(req, res) {
 
 // req.params.name
 app.get('/user/:name', function (req, res) {
-  var user = req.params.name;
-  var collection = db.collection('users');
-  collection.find({'name': user}).toArray(function(err, result) {
+  User.find({'name': req.params.name}, function(err, result) {
     if (result.length > 0) {
-      var found = result[0];
-      res.render('user', { name: found.name, info: found });
+      res.render('user', {name: result[0].name, info: result[0] });
     } else {
       res.send('User does not exist...');
     }
@@ -67,12 +64,9 @@ app.get('/user/:name', function (req, res) {
 
 // Get route for editing.
 app.get('/user/:name/edit', function (req, res) {
-  var user = req.params.name;
-  var collection = db.collection('users');
-  collection.find({'name': user}).toArray(function(err, result) {
+  User.find({'name': req.params.name}, function(err, result) {
     if (result.length > 0) {
-      var found = result[0];
-      res.render('edit', { name: found.name, info: found });
+      res.render('edit', {name: result[0].name, info: result[0] });
     } else {
       res.send('User does not exist...');
     }
@@ -81,21 +75,17 @@ app.get('/user/:name/edit', function (req, res) {
 
 // Post route for editing.
 app.post('/user/edit', function (req, res) {
-  var collection = db.collection('users');
-  collection.updateOne(
-    {'name': req.body.name}, 
-    {$set: {
-      age: req.body.age,
-      occup: req.body.occup,
-      hobby: req.body.hobby
-    }}, function(err, result) {
-      res.redirect('/user/' + req.body.name);
-    });
+  User.update({'name': req.body.name}, {
+    age: req.body.age,
+    occup: req.body.occup,
+    hobby: req.body.hobby
+  }, function(err, result) {
+    res.redirect('/user/' + req.body.name);
+  });
 });
 
 app.post('/user/delete', function (req, res) {
-  var collection = db.collection('users');
-  collection.deleteOne({'name': req.body.name}, function(err, result) {
+  User.remove({'name': req.body.name}, function(err, result) {
     res.redirect('/list');
   });
 });
