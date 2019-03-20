@@ -93,7 +93,7 @@ app.post('/user/edit', function (req, res) {
 });
 
 app.post('/user/delete', function (req, res) {
-  User.remove({'name': req.body.name}, function(err, result) {
+  User.deleteOne({'name': req.body.name}, function(err, result) {
     res.redirect('/list');
   });
 });
