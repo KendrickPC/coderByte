@@ -68,7 +68,7 @@ other helpful libraries that aid in building web applications with Node.js.
 
 ![collection.update is deprecated. Use updateOne, updateMany, or bulkWrite instead.
 ]()
-![]()
+![Mongoose Deprecation Warning Fixes](https://mongoosejs.com/docs/deprecations.html)
 ![]()
 
 
