@@ -52,5 +52,35 @@ other helpful libraries that aid in building web applications with Node.js.
       }
     },
 
+##### Hosting to Heroku
 
-END 9:30 Using Mongoose with MongoDB
+![Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+![Procfile - Running the App](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile)
+![mLab Connecting the Database](https://docs.mlab.com/connecting/)
+
+
+
+
+
+##### Deprecation Fixes:
+
+![Current URL string parser is deprecated warning](https://stackoverflow.com/questions/50448272/avoid-current-url-string-parser-is-deprecated-warning-by-setting-usenewurlpars)
+
+![collection.update is deprecated. Use updateOne, updateMany, or bulkWrite instead.
+]()
+![]()
+![]()
+
+
+
+
+
+
+
+
+
+
+
+
+
+

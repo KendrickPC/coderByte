@@ -3,8 +3,15 @@ var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/testing-mongoose');
+mongoose.connect('mongodb://localhost:27017/testing-mongoose', { useNewUrlParser: true });
 var db = mongoose.connection;
+
+// Mongoose Deprecation Warnings Fix Attempt.
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+
+
 
 // For Express.
 var app = express();
