@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/testing-mongoose', { 
+mongoose.connect('mongodb://Kenneth:superuser11**@ds117866.mlab.com:17866/heroku_5jkh9srg', { 
   useCreateIndex: true,
   useNewUrlParser: true
 });
@@ -18,6 +18,7 @@ mongoose.set('useCreateIndex', true);
 var app = express();
 app.set('view engine', 'ejs');
 app.use(express.static('static'));
+app.set('port', process.env.PORT || 3001);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -99,7 +100,7 @@ app.post('/user/delete', function (req, res) {
 });
 
 db.once('open', function() {
-  app.listen(3001, function() {
-    console.log('server started on port 3001');
+  app.listen(process.env.PORT, function() {
+    console.log('server started');
   });
 });

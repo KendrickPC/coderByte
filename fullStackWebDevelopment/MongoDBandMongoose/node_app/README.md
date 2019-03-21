@@ -1,3 +1,5 @@
+##### App Deployed to Heroku at ![Live App Hosted on Heroku](https://testing321testing321.herokuapp.com/)
+
 # Node.js and Express Beginner Summary:
 
 In this tutorial I learned how to install Node.js, Express, EJS, setup a proper
@@ -58,10 +60,6 @@ other helpful libraries that aid in building web applications with Node.js.
 ![Procfile - Running the App](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile)
 ![mLab Connecting the Database](https://docs.mlab.com/connecting/)
 
-
-
-
-
 ##### Deprecation Fixes:
 
 ![Current URL string parser is deprecated warning](https://stackoverflow.com/questions/50448272/avoid-current-url-string-parser-is-deprecated-warning-by-setting-usenewurlpars)
@@ -69,18 +67,3 @@ other helpful libraries that aid in building web applications with Node.js.
 ![collection.update is deprecated. Use updateOne, updateMany, or bulkWrite instead.
 ]()
 ![Mongoose Deprecation Warning Fixes](https://mongoosejs.com/docs/deprecations.html)
-![]()
-
-
-
-
-
-
-
-
-
-
-
-
-
-

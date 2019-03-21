@@ -1,0 +1,19 @@
+{
+  "name": "testing123testing",
+  "version": "0.0.1",
+  "author": "Kenneth <kennethpchang@gmail.com>",
+  "description": "testing node.js",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "ejs": "*",
+    "mongodb": "*",
+    "mongoose": "*"
+  }
+}
